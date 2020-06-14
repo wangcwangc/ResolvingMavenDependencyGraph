@@ -82,11 +82,11 @@ public abstract class DependencyMojo extends AbstractMojo {
     // 初始化全局变量
     protected void initGlobalVar() throws Exception {
         MavenUtil.i().setMojo(this);
-        Config.maxDependencyDepth = maxDependencyDepth;
+//        Config.maxDependencyDepth = maxDependencyDepth;
         Config.logFilePath = logFilePath;
         Config.nThreads = nThreads;
         // 初始化NodeAdapters
-        NodeAdapters.init(root);
+//        NodeAdapters.init(root);
         // 初始化DepJars
 //        DepJars.init(NodeAdapters.i());// occur jar in tree
         // 验证系统大小

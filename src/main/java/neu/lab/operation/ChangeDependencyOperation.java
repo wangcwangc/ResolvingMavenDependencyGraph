@@ -1,4 +1,4 @@
-package neu.lab.container.operation;
+package neu.lab.operation;
 
 import neu.lab.container.ArtifactNodes;
 import neu.lab.container.NodeAdapters;
