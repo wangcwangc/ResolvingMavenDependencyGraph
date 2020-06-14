@@ -1,9 +1,5 @@
 package neu.lab.container;
 
-import neu.lab.data.dao.ArtifactVersionDao;
-import neu.lab.data.dao.MavenArtifactDao;
-import neu.lab.data.po.ArtifactVersion;
-import neu.lab.data.po.MavenArtifact;
 import neu.lab.util.MavenCrawler;
 import neu.lab.util.MavenUtil;
 import neu.lab.util.MybatisUtil;
