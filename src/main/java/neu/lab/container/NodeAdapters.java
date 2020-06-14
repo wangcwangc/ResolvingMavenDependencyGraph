@@ -11,14 +11,8 @@ import org.apache.maven.shared.dependency.tree.DependencyNode;
  * @author wangchao
  */
 public class NodeAdapters {
-    private static NodeAdapters instance;
-
-    public static NodeAdapters i() {
-        return instance;
-    }
 
     public static void init(DependencyNode root) {
-        instance = new NodeAdapters();
         MavenDependency mavenDependency = new MavenDependency(root.getArtifact().getGroupId(), root.getArtifact().getArtifactId());
         for (DependencyNode childDirect : root.getChildren()) {
             mavenDependency.setDependencyGroupId(childDirect.getArtifact().getGroupId());
@@ -42,10 +36,13 @@ public class NodeAdapters {
     }
 
     private static void insertMavenDependency(MavenDependency mavenDependency) {
-        SqlSession sqlSession = MybatisUtil.createSqlSession();
-        MavenDependencyDao mavenDependencyDao = sqlSession.getMapper(MavenDependencyDao.class);
-        if (mavenDependencyDao.isExist(mavenDependency) == 0) {
-            mavenDependencyDao.insertMavenDependency(mavenDependency);
-        }
+//        SqlSession sqlSession = MybatisUtil.createSqlSession();
+//        MavenDependencyDao mavenDependencyDao = sqlSession.getMapper(MavenDependencyDao.class);
+//        if (mavenDependencyDao.isExist(mavenDependency) == 0) {
+//            mavenDependencyDao.insertMavenDependency(mavenDependency);
+//            sqlSession.commit();
+//        }
+//        MybatisUtil.closeSqlSession(sqlSession);
+        System.out.println(mavenDependency.toString());
     }
 }

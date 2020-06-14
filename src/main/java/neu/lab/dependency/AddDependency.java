@@ -10,4 +10,5 @@ public class AddDependency extends DependencyMojo {
     public void run() {
         NodeAdapters.init(root);
     }
+    //mvn -Dmaven.test.skip=true neu.lab:ResolvingMavenDependencyGraph:1.0:addDependency -e
 }
