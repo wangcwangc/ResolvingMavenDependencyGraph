@@ -7,6 +7,11 @@ public class MavenDependency {
     private String dependencyGroupId;
     private String dependencyArtifactId;
 
+    public MavenDependency(String groupId, String artifactId) {
+        this.groupId = groupId;
+        this.artifactId = artifactId;
+    }
+
     public int getId() {
         return id;
     }

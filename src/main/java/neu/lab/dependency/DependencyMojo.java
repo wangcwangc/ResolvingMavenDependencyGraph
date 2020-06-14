@@ -70,7 +70,7 @@ public abstract class DependencyMojo extends AbstractMojo {
 
     public long systemFileSize = 0;// byte
 
-    @Parameter(property = "maxDependencyDepth", defaultValue = "2")
+    @Parameter(property = "maxDependencyDepth", defaultValue = "10")
     public int maxDependencyDepth;
 
     @Parameter(property = "logFilePath")
@@ -82,7 +82,7 @@ public abstract class DependencyMojo extends AbstractMojo {
     // 初始化全局变量
     protected void initGlobalVar() throws Exception {
         MavenUtil.i().setMojo(this);
-//        Config.maxDependencyDepth = maxDependencyDepth;
+        Config.maxDependencyDepth = maxDependencyDepth;
         Config.logFilePath = logFilePath;
         Config.nThreads = nThreads;
         // 初始化NodeAdapters
