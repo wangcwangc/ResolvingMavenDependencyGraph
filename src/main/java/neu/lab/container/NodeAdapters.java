@@ -22,7 +22,7 @@ public class NodeAdapters {
         MavenDependency mavenDependency = new MavenDependency(root.getArtifact().getGroupId(), root.getArtifact().getArtifactId());
         for (DependencyNode childDirect : root.getChildren()) {
             mavenDependency.setDependencyGroupId(childDirect.getArtifact().getGroupId());
-            mavenDependency.setDependencyGroupId(childDirect.getArtifact().getArtifactId());
+            mavenDependency.setDependencyArtifactId(childDirect.getArtifact().getArtifactId());
             insertMavenDependency(mavenDependency);
             addIndirectArtifactNodes(childDirect, 2);
         }
@@ -34,7 +34,7 @@ public class NodeAdapters {
             MavenDependency mavenDependency = new MavenDependency(dependencyNode.getArtifact().getGroupId(), dependencyNode.getArtifact().getArtifactId());
             for (DependencyNode child : dependencyNode.getChildren()) {
                 mavenDependency.setDependencyGroupId(child.getArtifact().getGroupId());
-                mavenDependency.setDependencyGroupId(child.getArtifact().getArtifactId());
+                mavenDependency.setDependencyArtifactId(child.getArtifact().getArtifactId());
                 insertMavenDependency(mavenDependency);
                 addIndirectArtifactNodes(child, depth);
             }
