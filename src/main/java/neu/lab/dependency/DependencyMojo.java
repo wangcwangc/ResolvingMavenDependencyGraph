@@ -120,8 +120,8 @@ public abstract class DependencyMojo extends AbstractMojo {
                     + project.getFile().getAbsolutePath());
         }
         long endTime = System.currentTimeMillis();
-        this.getLog().debug("count time : " + (endTime - startTime) + "s");
-        this.getLog().debug("method detect end");
+        this.getLog().info("count time : " + (endTime - startTime) + "s");
+        this.getLog().info("method detect end");
 
     }
 

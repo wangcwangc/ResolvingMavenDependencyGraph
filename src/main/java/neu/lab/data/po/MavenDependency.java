@@ -55,7 +55,6 @@ public class MavenDependency {
     @Override
     public String toString() {
         return "MavenDependency{" +
-            "id=" + id +
             ", groupId='" + groupId + '\'' +
             ", artifactId='" + artifactId + '\'' +
             ", dependencyGroupId='" + dependencyGroupId + '\'' +

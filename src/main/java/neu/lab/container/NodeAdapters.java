@@ -3,6 +3,7 @@ package neu.lab.container;
 import neu.lab.data.dao.MavenDependencyDao;
 import neu.lab.data.po.MavenDependency;
 import neu.lab.util.Config;
+import neu.lab.util.MavenUtil;
 import neu.lab.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.maven.shared.dependency.tree.DependencyNode;
@@ -36,13 +37,13 @@ public class NodeAdapters {
     }
 
     private static void insertMavenDependency(MavenDependency mavenDependency) {
-//        SqlSession sqlSession = MybatisUtil.createSqlSession();
-//        MavenDependencyDao mavenDependencyDao = sqlSession.getMapper(MavenDependencyDao.class);
-//        if (mavenDependencyDao.isExist(mavenDependency) == 0) {
-//            mavenDependencyDao.insertMavenDependency(mavenDependency);
-//            sqlSession.commit();
-//        }
-//        MybatisUtil.closeSqlSession(sqlSession);
-        System.out.println(mavenDependency.toString());
+        SqlSession sqlSession = MybatisUtil.createSqlSession();
+        MavenDependencyDao mavenDependencyDao = sqlSession.getMapper(MavenDependencyDao.class);
+        if (mavenDependencyDao.isExist(mavenDependency) == 0) {
+            MavenUtil.i().getLog().info("insert dependency : " + mavenDependency.toString());
+            mavenDependencyDao.insertMavenDependency(mavenDependency);
+            sqlSession.commit();
+        }
+        MybatisUtil.closeSqlSession(sqlSession);
     }
 }
